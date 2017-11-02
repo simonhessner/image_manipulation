@@ -3,6 +3,9 @@ import cv2
 import sys
 import os
 
+"""
+	Image must be 1 channel! This function is called by fold_image for every channel
+"""
 def fold_pixel(img, x, y, kernel):
 	img_height, img_width = np.array(img).shape
 	kernel_height, kernel_width = np.array(kernel).shape
@@ -21,6 +24,9 @@ def fold_pixel(img, x, y, kernel):
 	
 	return result
 
+"""
+	Image must be 3-channel! (RGB)
+"""
 def fold_image(img, kernel):	
 	height, width, channels = img.shape
 	new_img = np.zeros((height,width,channels), dtype=np.uint8)
@@ -32,7 +38,9 @@ def fold_image(img, kernel):
 
 	return new_img
 
-
+"""
+	This function expects a RGB image file (filename) as first parameter and the number of iterations as second
+"""
 def simple_blur(img_file, iterations):
 	orig_img = cv2.imread(img_file)	
 
