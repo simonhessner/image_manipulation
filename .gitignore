@@ -1,3 +1,9 @@
+*.jpg
+*.png
+*.jpeg
+
+### python .gitignore by github:
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
